@@ -15,7 +15,7 @@ As a Data Analyst from Code Institute Consulting, you are requested by HealthCar
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
 * **Business Requirement 1**: Data Visualization 
-	* We will display a image montage for all classes or individual classes
+	* We will display a image montage for all classes and/or individual classes
 	* We will display the "average" image for each class
 
 * **Business Requirement 2**:  Classification
