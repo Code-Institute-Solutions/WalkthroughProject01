@@ -1,10 +1,9 @@
-## Variables Meaning
-The dataset contains cell images with records of parasitized cells and uninfected cells xxxxxxxxxxx
-
+## Dataset Meaning
+The dataset contains images taken from blood smear workflow (when a drop of blood it taken on a glass slide) of cells that are parasitized or uninfected with malaria.
 
 
 ## Business Requirements
-As a Data Analyst from Code Institute Consulting, you are requested by HealthCare division to provide actionable insights and data driven recommendations to a Global Hospital Institution. The hospital is currently facing challenges on disease diagnostic.
+As a Data Analyst from Code Institute Consulting, you are requested by HealthCare division to provide actionable insights and data driven recommendations to a Global Hospital Institution. The hospital is currently facing challenges on disease detection, specially with malaria.
 * 1 - I am interested to differentiate visually an infected and uninfected cell.
 * 2 - I am interested to tell whether or not a given cell is infected with malaria.
 
@@ -34,9 +33,9 @@ As a Data Analyst from Code Institute Consulting, you are requested by HealthCar
 		* after 3 months of usage, more than 30% of new onboarded custormer churn (it is an indication that the offers are not working or the model is not detecting potential churners)
 		* Precision for non churn customer is lower than 80% on train and test set. (We don't want to offer free discount to many non churnable prospects)
 * The model output is defined as flag, indicating if a prospect will churn or not, and the associate probability of churning. If the prospect is online, the prospect will have already provided the input data via a form. If the prospect is talking to a sales person, the sales person will conduct a interview to gather the input data and feed into the App. The prediction is made on the fly (not in batches).
-* Heuristics: Currently there is no approach to predict churn on prospect
-* The training data to fit the model come from the Telco Customer. This dataset contains about 7 thousand customer records.
-	* Train data - target: Churn ; features: all other variables, but tenure, total charges and customerID
+* Heuristics: Traditional diagnosis of malaria in laboratory requires an experienced person and careful inspection to discriminate healthy and infected red blood cells. It is also very time-consuming and may produce inaccurate reports due to human errors [link](https://www.hindawi.com/journals/wcmc/2020/8895429/). Thick blood smears assist in detecting the presence of parasites while thin blood smears assist in identifying the species of the parasite causing the infection [link](https://peerj.com/articles/4568/) Alternative techniques such as polymerase chain reaction (PCR) and rapid diagnostic tests (RDT) are used; however, PCR analysis is limited in its performance.  malaria detection can be considered a manual process which may be automated using ML. There might have problems if we do not have the right expertise in specific regions around the world
+* The training data to fit the model come from [National Institutes of Health (NIH) Website](https://ceb.nlm.nih.gov/repositories/malaria-datasets/). This dataset contains about 30 thousand images. We will provide the data already in a GitHub repo.
+	* Train data - target: infected or not; features: all images
 
 
 
