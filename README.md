@@ -1,15 +1,15 @@
 ## Dataset Content
-The dataset contains images taken from blood smear workflow (when a drop of blood it taken on a glass slide) of cells that are infected or uninfected with malaria.
+The dataset contains +27 thousand images taken from blood smear workflow (when a drop of blood it taken on a glass slide) of cells that are parasitized or uninfected with malaria.
 
 
 ## Business Requirements
-As a Data Analyst from Code Institute Consulting, you are requested by HealthCare division to provide actionable insights and data driven recommendations to a Global Hospital Institution. The hospital is currently facing challenges on disease detection, specially with malaria.
-* 1 - I am interested to differentiate visually an infected and uninfected cell.
-* 2 - I am interested to tell whether or not a given cell is infected with malaria.
+As a Data Analyst from Code Institute Consulting, you are requested by HealthCare division to provide actionable insights and data driven recommendations to a Global Hospital Institution. The client is currently facing challenges on disease detection, specially with malaria.
+* 1 - The client is interested to have a study to visually differentiate an parasitized and uninfected cell.
+* 2 - The client is interested to tell whether or not a given cell is parasitized with malaria or not.
 
 
 ## Hypothesis and how to validate?
-* We suspect malaria infected cell have clear marks/signs in the middle of the cell that can differentiate from a un-infected cell
+* We suspect malaria parasitized cell have clear marks/signs, typically in the middle of the cell, that can differentiate from a un-infected cell
   * A average image study can help to investigate it
 
 
