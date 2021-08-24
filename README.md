@@ -15,8 +15,9 @@ As a Data Analyst from Code Institute Consulting, you are requested by HealthCar
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
 * **Business Requirement 1**: Data Visualization 
-	* We will display a image montage for all classes and/or individual classes
-	* We will display the "average" image for each class
+	* We will display a image montage for either parasitized or uninfected cell
+	* We will display the "average" image and "standard deviation" image for parasitized and uninfected cell
+	* We will display the difference between an average parasitized cell and an average uninfected cell
 
 * **Business Requirement 2**:  Classification
 	* We want to predict if a given cell is infected or not with malaria. 
@@ -43,12 +44,12 @@ As a Data Analyst from Code Institute Consulting, you are requested by HealthCar
 ### Page 1: Quick project summary
 * Quick project summary
 
-### Page 2: User Inteface
+### Page 2: Malaria Detector
 * User Interface with a file uploader widget. The user should upload a malaria cell image and it will display the image and a prediction statement, indicating if the cell is infected or not with malaria and the probability associated to this statement. 
 
-### Page 3: Image Montage
+### Page 3: Cells Visualizer
 * It will answer business requirement 1
 
-### Page 4: ML: Malaria Classifier Infection
-* Evaluation metrics/performance on MalariaClf
+### Page 4: ML: Predict Malaria
+* Evaluation metrics/performance
   * For both train and test set: Confusion Matrix and Classification Report
