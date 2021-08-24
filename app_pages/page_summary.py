@@ -24,11 +24,11 @@ def page_summary_body():
     st.success(
         f"The project has 2 business requirements:\n"
         f"* 1 - The client is interested to have a study to visually differentiate "
-        f"an parasitized and uninfected cell..\n"
+        f"an parasitized and uninfected cell.\n"
         f"* 2 - The client is interested to tell whether or not a given cell is parasitized "
         f"with malaria or not."
         )
 
-    st.write("add a image that represents the project")
+    # st.write("add a image that represents the project")
     # project_snapshot = plt.imread("pictures/requirements.png")
     # st.image(project_snapshot, caption='Representations for Business Requirements 1 and 2, respectively.')
