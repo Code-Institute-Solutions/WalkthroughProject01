@@ -8,9 +8,13 @@ def page_summary_body():
 
     st.info(
         f"**Project Terms & Jargons**\n"
-        f"* Malaria is a disease.\n"
-        f"* Quick fact about malaria.\n"
-        f"* how is currently diagnosed.\n\n"
+        f"* Malaria is a parasitic infection transmitted by the bite of infected female "
+        f"Anopheles mosquitoes.\n"
+        f"* According to [WHO](https://www.who.int/news-room/fact-sheets/detail/malaria), "
+        f"in 2019, there were an estimated 229 million cases of malaria worldwide and an "
+        f"estimated number of malaria deaths of 409 thousand. "
+        f"Children <5 years are the most vulnerable group, accounting for 67% (274 000) "
+        f"of all malaria deaths worldwide in 2019.\n\n"
         f"**Project Dataset**\n"
         f"* The available dataset contains +27 thousand images taken from "
         f"blood smear workflow (when a drop of blood it taken on a glass slide) of cells that "

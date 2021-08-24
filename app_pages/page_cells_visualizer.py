@@ -23,6 +23,11 @@ def page_cells_visualizer_body():
         image_montage(dir_path= my_data_dir + '/train',
                       label_to_display=label_to_display,
                       nrows=8, ncols=3, figsize=(10,25))
+      st.write("---")
+    
+    # if st.checkbox("Classes Aveerage"):
+    #   project_snapshot = plt.imread("pictures/requirements.png")
+    #   st.image(project_snapshot, caption='Representations for Business Requirements 1 and 2, respectively.')
 
 
 import itertools
