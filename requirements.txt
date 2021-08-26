@@ -11,6 +11,7 @@ feature-engine==1.0.2
 
 # add tensorflow?  24?
 scikit-learn==0.24.2
+libgtk2.0-dev
 opencv-python==4.1.2.30
 tensorflow==2.6.0
 xgboost==1.2.1
