@@ -9,6 +9,12 @@ def page_page_malaria_detector_body():
         f"with malaria or not."
         )
 
+    st.write("* You can download a set of Parasitized and Uninfected Cells for live prediction")
+    st.markdown(DownloadReport(
+        bin_file='inputs/live_data/cell_images.zip', file_label='cell_images.zip'),
+        unsafe_allow_html=True
+        )
+
 
     img_file_buffer = st.file_uploader('Upload the blood smear sample', type='png')
     st.write("---")
@@ -24,6 +30,18 @@ def page_page_malaria_detector_body():
 
         plot_predictions_probabilities(pred_proba, pred_class)
 
+import os
+import base64
+def DownloadReport(bin_file, file_label='File'):
+
+    with open(bin_file, 'rb') as f:
+        data = f.read()
+    bin_str = base64.b64encode(data).decode()
+    href = (
+        f'<a href="data:application/octet-stream;base64,{bin_str}" '
+        f'download="{os.path.basename(bin_file)}">Download {file_label}</a>'
+        )
+    return href
 
 
 import pandas as pd
