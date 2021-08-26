@@ -13,7 +13,7 @@ def page_summary_body():
         f"* According to [WHO](https://www.who.int/news-room/fact-sheets/detail/malaria), "
         f"in 2019, there were an estimated 229 million cases of malaria worldwide and an "
         f"estimated number of malaria deaths of 409 thousand. "
-        f"Children <5 years are the most vulnerable group, accounting for 67% (274 000) "
+        f"Children <5 years are the most vulnerable group, accounting for 67% (274 thousand) "
         f"of all malaria deaths worldwide in 2019.\n\n"
         f"**Project Dataset**\n"
         f"* The available dataset contains +27 thousand images taken from "
