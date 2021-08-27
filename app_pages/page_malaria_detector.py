@@ -24,16 +24,22 @@ def page_page_malaria_detector_body():
     st.write("---")
 
 
-    img_file_buffer = st.file_uploader('Upload a blood smear sample', type='png')
-    if img_file_buffer is not None:
+    images_buffer = st.file_uploader('Upload blood smear samples. You may select more than one.',
+                                        type='png',accept_multiple_files=True)
+   
 
-        img = np.array((Image.open(img_file_buffer)))
-        st.write("* Blood Smear Sample")
-        st.image(img, caption=f"Image Size: Width {img.shape[1]}px x Height {img.shape[0]}px")
-        my_image = resize_input_image(img)
+    if images_buffer is not None:
+        for image in images_buffer:
 
-        pred_proba, pred_class = load_model_and_predict(my_image)
-        plot_predictions_probabilities(pred_proba, pred_class)
+            img = np.array((Image.open(image)))
+            st.info(f"Blood Smear Sample: image size {img.shape[1]}px width x {img.shape[0]}px height")
+            
+            st.image(img, caption=f"{image.name}")
+            resized_img = resize_input_image(img)
+
+            pred_proba, pred_class = load_model_and_predict(resized_img)
+            plot_predictions_probabilities(pred_proba, pred_class)
+            # st.write("---")
 
 import os
 import base64
@@ -94,7 +100,7 @@ def load_model_and_predict(my_image):
 
     # st.write(pred_class,pred_proba)
     st.write(
-        f"* The predictive analysis indicates the sample cell is "
+        f"The predictive analysis indicates the sample cell is "
         f"**{pred_class.lower()}** with malaria.")
     
     return pred_proba, pred_class
