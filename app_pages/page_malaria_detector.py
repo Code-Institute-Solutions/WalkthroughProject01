@@ -29,6 +29,7 @@ def page_page_malaria_detector_body():
    
 
     if images_buffer is not None:
+        df_report = pd.DataFrame([])
         for image in images_buffer:
 
             img = np.array((Image.open(image)))
@@ -39,7 +40,20 @@ def page_page_malaria_detector_body():
 
             pred_proba, pred_class = load_model_and_predict(resized_img)
             plot_predictions_probabilities(pred_proba, pred_class)
-            # st.write("---")
+            df_report = df_report.append(
+                {"Name":image.name, 'Result': pred_class },
+                ignore_index=True)
+        
+
+        if not df_report.empty:
+            st.success("Analysis Report")
+            st.table(df_report)
+            df_report.to_csv('outputs/report/Report.csv')
+
+            st.markdown(
+                DownloadReport(
+                    bin_file='outputs/report/Report.csv',
+                    file_label='Report'),unsafe_allow_html=True)
 
 import os
 import base64
