@@ -9,15 +9,18 @@ def page_page_malaria_detector_body():
         f"with malaria or not."
         )
 
-    st.write("* You can download a set of Parasitized and Uninfected Cells for live prediction")
+    st.write(
+        f"* You can download a set of Parasitized and Uninfected Cells for live prediction. "
+        f"These cells were not used to train the model.")
     st.markdown(DownloadReport(
         bin_file='inputs/live_data/cell_images.zip', file_label='cell_images.zip'),
         unsafe_allow_html=True
         )
-
-
-    img_file_buffer = st.file_uploader('Upload the blood smear sample', type='png')
     st.write("---")
+
+
+    img_file_buffer = st.file_uploader('Upload a blood smear sample', type='png')
+    
     if img_file_buffer is not None:
 
         img = np.array((Image.open(img_file_buffer)))
@@ -48,25 +51,23 @@ import pandas as pd
 import plotly.express as px
 def plot_predictions_probabilities(pred_proba, pred_class):
 
-
-    prob_per_class= pd.DataFrame(data=[0,0],index={'Parasitized': 0, 'Uninfected': 1}.keys(), columns=['Probability'])
-
+    prob_per_class= pd.DataFrame(
+            data=[0,0],
+            index={'Parasitized': 0, 'Uninfected': 1}.keys(),
+            columns=['Probability']
+        )
     prob_per_class.loc[pred_class] = pred_proba
-
-
     for x in prob_per_class.index.to_list():
         if x not in pred_class: prob_per_class.loc[x] = 1 - pred_proba
-
     prob_per_class = prob_per_class.round(3)
     prob_per_class['Diagnostic'] = prob_per_class.index
-    import plotly.express as px
+    
     fig = px.bar(
             prob_per_class,
             x = 'Diagnostic',
             y = prob_per_class['Probability'],
             range_y=[0,1],
-            width=600, height=400,template='presentation')
-
+            width=600, height=400,template='seaborn')
     st.plotly_chart(fig)
 
 
@@ -89,7 +90,7 @@ def load_model_and_predict(my_image):
     pred_class =  target_map[pred_proba > 0.5]  
     st.write(
         f"* The predictive analysis indicates the sample cell is "
-        f"{pred_class.lower()} with malaria.")
+        f"**{pred_class.lower()}** with malaria.")
     
     if pred_class == target_map[0]: pred_proba = 1 - pred_proba
 
