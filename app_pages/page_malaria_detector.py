@@ -48,15 +48,19 @@ def page_page_malaria_detector_body():
         if not df_report.empty:
             st.success("Analysis Report")
             st.table(df_report)
-            df_report.to_csv('outputs/report/Report.csv')
+            st.markdown(get_table_download_link_csv(df_report), unsafe_allow_html=True)
 
-            st.markdown(
-                DownloadReport(
-                    bin_file='outputs/report/Report.csv',
-                    file_label='Report'),unsafe_allow_html=True)
 
 import os
 import base64
+
+
+def get_table_download_link_csv(df):
+    csv = df.to_csv().encode()
+    b64 = base64.b64encode(csv).decode()
+    href = f'<a href="data:file/csv;base64,{b64}" download="Report.csv" target="_blank">Download Report</a>'
+    return href
+
 def DownloadReport(bin_file, file_label='File'):
 
     with open(bin_file, 'rb') as f: data = f.read()
