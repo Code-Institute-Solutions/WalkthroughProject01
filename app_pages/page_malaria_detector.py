@@ -1,7 +1,14 @@
 import streamlit as st
 from PIL import Image
 import numpy as np
+import pandas as pd
 
+from src.data_management import download_dataframe_as_csv, download_file
+from src.machine_learning.predictive_analysis import (
+                                                    load_model_and_predict,
+                                                    resize_input_image,
+                                                    plot_predictions_probabilities
+                                                    )
 
 def page_page_malaria_detector_body():
     st.info(
@@ -15,7 +22,7 @@ def page_page_malaria_detector_body():
         )
 
     st.markdown(
-        DownloadReport(
+        download_file(
                     bin_file='inputs/live_data/cell_images.zip',
                     file_label='cell_images.zip'),
         unsafe_allow_html=True
@@ -23,102 +30,27 @@ def page_page_malaria_detector_body():
 
     st.write("---")
 
-
     images_buffer = st.file_uploader('Upload blood smear samples. You may select more than one.',
                                         type='png',accept_multiple_files=True)
    
-
     if images_buffer is not None:
         df_report = pd.DataFrame([])
         for image in images_buffer:
 
             img = np.array((Image.open(image)))
-            st.info(f"Blood Smear Sample: image size {img.shape[1]}px width x {img.shape[0]}px height")
+            st.info(f"Blood Smear Sample: **{image.name}**")
             
-            st.image(img, caption=f"{image.name}")
+            st.image(img, caption=f"Image Size: {img.shape[1]}px width x {img.shape[0]}px height")
             resized_img = resize_input_image(img)
 
             pred_proba, pred_class = load_model_and_predict(resized_img)
             plot_predictions_probabilities(pred_proba, pred_class)
-            df_report = df_report.append(
-                {"Name":image.name, 'Result': pred_class },
-                ignore_index=True)
+            df_report = df_report.append({"Name":image.name, 'Result': pred_class }, ignore_index=True)
         
 
         if not df_report.empty:
             st.success("Analysis Report")
             st.table(df_report)
-            st.markdown(get_table_download_link_csv(df_report), unsafe_allow_html=True)
+            st.markdown(download_dataframe_as_csv(df_report), unsafe_allow_html=True)
 
 
-import os
-import base64
-
-
-def get_table_download_link_csv(df):
-    csv = df.to_csv().encode()
-    b64 = base64.b64encode(csv).decode()
-    href = f'<a href="data:file/csv;base64,{b64}" download="Report.csv" target="_blank">Download Report</a>'
-    return href
-
-def DownloadReport(bin_file, file_label='File'):
-
-    with open(bin_file, 'rb') as f: data = f.read()
-    bin_str = base64.b64encode(data).decode()
-    href = (
-        f'<a href="data:application/octet-stream;base64,{bin_str}" '
-        f'download="{os.path.basename(bin_file)}">Download {file_label}</a>'
-    )
-    return href
-
-
-import pandas as pd
-import plotly.express as px
-def plot_predictions_probabilities(pred_proba, pred_class):
-
-    prob_per_class= pd.DataFrame(
-            data=[0,0],
-            index={'Parasitized': 0, 'Uninfected': 1}.keys(),
-            columns=['Probability']
-        )
-    prob_per_class.loc[pred_class] = pred_proba
-    for x in prob_per_class.index.to_list():
-        if x not in pred_class: prob_per_class.loc[x] = 1 - pred_proba
-    prob_per_class = prob_per_class.round(3)
-    prob_per_class['Diagnostic'] = prob_per_class.index
-    
-    fig = px.bar(
-            prob_per_class,
-            x = 'Diagnostic',
-            y = prob_per_class['Probability'],
-            range_y=[0,1],
-            width=600, height=400,template='seaborn')
-    st.plotly_chart(fig)
-
-
-
-
-
-import cv2      
-def resize_input_image(img):        
-    # img_resized = cv2.resize(img,(132,133)) 
-    img_resized = cv2.resize(img,(130,130)) 
-    my_image = np.expand_dims(img_resized, axis=0)
-    return my_image
-
-from tensorflow.keras.models import load_model
-def load_model_and_predict(my_image):
-    # model = load_model('outputs/model/my_model.h5')
-    model = load_model('outputs/model/malaria_detector.h5')
-    pred_proba = model.predict(my_image)[0,0]
-
-    target_map = {v: k for k, v in {'Parasitized': 0, 'Uninfected': 1}.items()}
-    pred_class =  target_map[pred_proba > 0.5]  
-    if pred_class == target_map[0]: pred_proba = 1 - pred_proba
-
-    # st.write(pred_class,pred_proba)
-    st.write(
-        f"The predictive analysis indicates the sample cell is "
-        f"**{pred_class.lower()}** with malaria.")
-    
-    return pred_proba, pred_class
