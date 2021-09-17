@@ -34,7 +34,3 @@ def page_summary_body():
         f"* 2 - The client is interested to tell whether or not a given cell is parasitized "
         f"with malaria or not."
         )
-
-    # st.write("add a image that represents the project")
-    # project_snapshot = plt.imread("pictures/requirements.png")
-    # st.image(project_snapshot, caption='Representations for Business Requirements 1 and 2, respectively.')
