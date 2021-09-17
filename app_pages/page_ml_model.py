@@ -1,36 +1,28 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+from matplotlib.image import imread
+from src.machine_learning.evaluate_clf import clf_performance_train_validation_test_set
 
 
 def page_ml_model_body():
+    version = 'v1'
 
-    st.write("### technicalML")
+    st.write("### Train, Validation and Test Set: Labels Frequencies")
 
-    # st.info(
-    #     f"**Project Terms & Jargons**\n"
-    #     f"* Malaria is a parasitic infection transmitted by the bite of infected female "
-    #     f"Anopheles mosquitoes.\n"
-    #     f"* A blood smear sample is collected, mixed with a reagent and examined in "
-    #     f"the microscope. Visual criteria are used to detect malaria parasites.\n"
-    #     f"* According to [WHO](https://www.who.int/news-room/fact-sheets/detail/malaria), "
-    #     f"in 2019, there were an estimated  229 million cases of malaria worldwide and an "
-    #     f"estimated 409 thousand deaths due to this diseease. "
-    #     f"Children <5 years are the most vulnerable group, accounting for 67% (274 thousand) "
-    #     f"of all malaria deaths worldwide in 2019.\n\n"
-    #     f"**Project Dataset**\n"
-    #     f"* The available dataset contains +27 thousand images taken from "
-    #     f"blood smear workflow (when a drop of blood it taken on a glass slide) of cells that "
-    #     f"are parasitized or uninfected with malaria.")
+    labels_distribution = plt.imread(f"outputs/{version}/labels_distribution.png")
+    st.image(labels_distribution, caption='Labels Distribution on Train, Validation and Test Sets')
+    st.write("---")
 
-    # st.write(
-    #     f"* For additional information, please visit and **read** the "
-    #     f"[Project README file](https://github.com/FernandoRocha88/WalkthroughProject01/blob/main/README.md).")
-    
 
-    # st.success(
-    #     f"The project has 2 business requirements:\n"
-    #     f"* 1 - The client is interested to have a study to visually differentiate "
-    #     f"an parasitized and uninfected cell.\n"
-    #     f"* 2 - The client is interested to tell whether or not a given cell is parasitized "
-    #     f"with malaria or not."
-    #     )
+    st.write("### Model History")
+    col1, col2 = st.beta_columns(2)
+    with col1: 
+        model_acc = plt.imread(f"outputs/{version}/model_training_acc.png")
+        st.image(model_acc, caption='Model Traninig Accuracy')
+    with col2:
+        model_loss = plt.imread(f"outputs/{version}/model_training_losses.png")
+        st.image(model_loss, caption='Model Traninig Losses')
+    st.write("---")
+
+    st.write("### Performance on Train, Validation and Test Set")
+    clf_performance_train_validation_test_set(version=version)

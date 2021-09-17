@@ -3,6 +3,7 @@ import pandas as pd
 import os
 import base64
 from datetime import datetime
+import joblib
 
 def download_dataframe_as_csv(df):
 
@@ -25,3 +26,7 @@ def download_file(bin_file, file_label='File'):
         f'download="{os.path.basename(bin_file)}">Download {file_label}</a>'
     )
     return href
+
+
+def load_pkl_file(file_path):
+    return joblib.load(filename=file_path)

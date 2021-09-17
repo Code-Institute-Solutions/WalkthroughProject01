@@ -37,6 +37,7 @@ def page_cells_visualizer_body():
 
       st.image(avg_parasitized, caption='Parasitized Cell - Average and Variability')
       st.image(avg_uninfected, caption='Uninfected Cell - Average and Variability')
+      st.write("---")
 
     if st.checkbox("Differences between Average Parasitized and Average Uninfected Cells"):
           diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
