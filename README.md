@@ -41,18 +41,17 @@ As a Data Analyst from Code Institute Consulting, you are requested by HealthCar
 
 ## Dashboard Design (Streamlit App User Interface)
 
-### Page 1: Quick project summary
+### Page 1: Quick Project Summary
 * Quick project summary
 
-### Page 2: Malaria Detector
-* User Interface with a file uploader widget. The user should upload a malaria cell image and it will display the image and a prediction statement, indicating if the cell is infected or not with malaria and the probability associated to this statement. 
-
-### Page 3: Cells Visualizer
+### Page 2: Cells Visualizer
 * It will answer business requirement 1
 
-### Page 4: ML: Predict Malaria
-* Evaluation metrics/performance
-  * For both train and test set: Confusion Matrix and Classification Report
+### Page 3: Malaria Detector
+* User Interface with a file uploader widget. The user should upload a malaria cell image and it will display the image and a prediction statement, indicating if the cell is infected or not with malaria and the probability associated to this statement. 
+
+### Page 4: Project Hypothesis and Validation
+* For each project hypothesis, describe the conclusion on how you validated
 
 ### Page 5: ML: Predict Malaria
 * Label Frequencies for Train, Validation and Test Sets
