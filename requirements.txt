@@ -8,3 +8,4 @@ streamlit==0.85.0
 
 scikit-learn==0.24.2
 tensorflow==2.6.0
+notebook==6.4.4
