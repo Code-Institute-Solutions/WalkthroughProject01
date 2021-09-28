@@ -1,4 +1,1 @@
-inputs/malaria_dataset/test/*
-inputs/malaria_dataset/train/*
-inputs/malaria_dataset/validation/*
-jupyter_notebooks/inputs
+inputs
