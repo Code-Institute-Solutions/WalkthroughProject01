@@ -1,7 +1,8 @@
 import streamlit as st
 import matplotlib.pyplot as plt
+import pandas as pd
 from matplotlib.image import imread
-from src.machine_learning.evaluate_clf import clf_performance_train_validation_test_set
+from src.machine_learning.evaluate_clf import load_test_evaluation
 
 
 def page_ml_model_body():
@@ -24,5 +25,7 @@ def page_ml_model_body():
         st.image(model_loss, caption='Model Traninig Losses')
     st.write("---")
 
-    st.write("### Performance on Train, Validation and Test Set")
-    clf_performance_train_validation_test_set(version=version)
+    st.write("### Generalised Performance on Test Set")
+    st.dataframe(pd.DataFrame(load_test_evaluation(version), index=['Loss', 'Accuracy']))
+    
+    

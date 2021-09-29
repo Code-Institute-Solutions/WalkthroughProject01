@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np
 import pandas as pd
 
-from src.data_management import download_dataframe_as_csv, download_file
+from src.data_management import download_dataframe_as_csv
 from src.machine_learning.predictive_analysis import (
                                                     load_model_and_predict,
                                                     resize_input_image,
@@ -18,14 +18,7 @@ def page_malaria_detector_body():
 
     st.write(
         f"* You can download a set of Parasitized and Uninfected Cells for live prediction. "
-        f"These cells were not used to train the model."
-        )
-
-    st.markdown(
-        download_file(
-                    bin_file='inputs/live_data/cell_images.zip',
-                    file_label='cell_images.zip'),
-        unsafe_allow_html=True
+        f"You can download the images from [here](https://www.kaggle.com/gyanshashwat1611/malaria-cell-classification)"
         )
 
     st.write("---")
