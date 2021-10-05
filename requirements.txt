@@ -7,5 +7,5 @@ plotly
 streamlit
 
 scikit-learn
-tensorflow
+tensorflow-cpu
 kaggle
