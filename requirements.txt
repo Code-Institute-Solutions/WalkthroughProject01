@@ -1,12 +1,10 @@
 numpy==1.19.2
 pandas==1.1.2
-matplotlib
+matplotlib==3.3.1
 seaborn==0.11.0
 plotly==4.12.0
 
 streamlit==0.85.0
 
 scikit-learn==0.24.2
-tensorflow==2.6.0
-notebook==6.4.4
-kaggle
+tensorflow-cpu==2.6.0
