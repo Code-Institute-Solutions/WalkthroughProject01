@@ -29,12 +29,10 @@ As a Data Analyst from Code Institute Consulting, you are requested by HealthCar
 * We want a ML model to predict if a cell is infected with malaria or not, based on historical image data. It is a supervised model, a 2-class, single-label, classification model
 * Our ideal outcome is provide to the medical team a faster and reliable diagnostic if a given cell is infected or not with malaria.
 * The model success metrics are
-	* at least 90% Recall for parasitized, on test set (We don't want to miss a potential infected cell)
-	* The ML model is considered a failure if:
-		* Recall for not infected cells is lower than 80% on test set. (We don't want to inform a person has malaria when it doesn't)
+	* at least 65 % or more accuracy, on test set
 * The model output is defined as flag, indicating if the cell has malaria or not, and the associated probability of being infected or not. The medical staff will do the blood smear workflow as usual, and upload the picture to the App. The prediction is made on the fly (not in batches).
 * Heuristics: The current diagnostic needs an experienced staff and detailed inspection to distinguish infected and not infected cells. A blood smear sample is collected, mixed with a reagent and examined in the microscope. Visual criteria are used to detect malaria parasites.. It leaves room to produce inaccurate diagnostics due to human errors. On top of that, there are some specific hospital facilities, with malaria center, that don't have the sufficient right staff and expertise, it is typically understaffed.
-* The training data to fit the model come from [National Institutes of Health (NIH) Website](https://ceb.nlm.nih.gov/repositories/malaria-datasets/). This dataset contains about 30 thousand images.
+* The training data to fit the model come from [National Institutes of Health (NIH) Website](https://ceb.nlm.nih.gov/repositories/malaria-datasets/). This dataset contains about 30 thousand images. We have extracted a subset out of this dataset and saved it into another place for a quicker training of model.
 	* Train data - target: infected or not; features: all images
 
 
@@ -53,8 +51,7 @@ As a Data Analyst from Code Institute Consulting, you are requested by HealthCar
 ### Page 4: Project Hypothesis and Validation
 * For each project hypothesis, describe the conclusion on how you validated
 
-### Page 5: ML: Predict Malaria
+### Page 5: ML: Evaluation
 * Label Frequencies for Train, Validation and Test Sets
 * Model History - Accuracy and Losses
-* Evaluation metrics/performance
-  * Confusion Matrix and Classification Report: Train, Validation, Test Sets
+* Model evaluation
