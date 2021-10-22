@@ -12,12 +12,12 @@ from src.machine_learning.predictive_analysis import (
 
 def page_malaria_detector_body():
     st.info(
-        f"* The client is interested to tell whether or not a given cell is parasitized "
-        f"with malaria or not."
+        f"* The client is interested to tell whether a given cell contains malaria parasite "
+        f"or not."
         )
 
     st.write(
-        f"* You can download a set of Parasitized and Uninfected Cells for live prediction. "
+        f"* You can download a set of parasitized and uninfected cells for live prediction. "
         f"You can download the images from [here](https://www.kaggle.com/gyanshashwat1611/malaria-cell-classification)"
         )
 

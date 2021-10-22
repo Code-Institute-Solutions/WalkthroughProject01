@@ -1,5 +1,5 @@
 ## Dataset Content
-The dataset contains +27 thousand images taken from a blood smear workflow (where a drop of blood is placed on a glass slide). The cells are parasitized or uninfected with malaria.
+The dataset contains 5643 +27 thousand images taken from a blood smear workflow (where a drop of blood is placed on a glass slide). The cells are parasitized or uninfected with malaria.
 
 
 ## Business Requirements
@@ -16,12 +16,14 @@ As a Data Analyst from Code Institute Consulting, you are requested by the Healt
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
 * **Business Requirement 1**: Data Visualization 
 	* We will display the "mean" and "standard deviation" images for parasitized and uninfected cells.
-	* We will display the difference between an average parasitized cell and an average uninfected cell.
+ 	* We will display the difference between an average parasitized cell and an average uninfected cell.
 	* We will display a image montage for either parasitized or uninfected cells.
+	
+	
 
 * **Business Requirement 2**:  Classification
 	* We want to predict if a given cell is infected or not with malaria. 
-	* We want to build a binary classifier
+	* We want to build a binary classifier and generate reports.
 
 
 ## ML Business Case
@@ -41,18 +43,30 @@ As a Data Analyst from Code Institute Consulting, you are requested by the Healt
 
 ### Page 1: Quick Project Summary
 * Quick project summary
+	* General Information
+	* Project Dataset
+	* Link to addition ainformation
+	* Business requirements
+		*  The client is interested in having a study to differentiate a parasitized and uninfected cell visually.
+		*  The client is interested to tell whether a given cell contains malaria parasite or not.
 
 ### Page 2: Cells Visualizer
 * It will answer business requirement 1
+	* Checkbox 1 - Difference between average and variability image
+	* Checkbox 2 - Differences between average parasitized and average uninfected cells
+	* Checkbox 3 - Image Montage
 
 ### Page 3: Malaria Detector
-* User Interface with a file uploader widget. The user should upload a malaria cell image. It will display the image and a prediction statement, indicating if the cell is infected or not with malaria and the probability associated with this statement. 
+* Business requirement 2 information - "The client is interested to tell whether a given cell contains malaria parasite or not."
+* Link to download a set of parasite contained and unifected cell images for live prediction.
+* User Interface with a file uploader widget. The user should upload multiple malaria cell image. It will display the image and a prediction statement, indicating if the cell is infected or not with malaria and the probability associated with this statement. 
+* Table with image name and prediction results.
+* Download button to download table.
 
 ### Page 4: Project Hypothesis and Validation
-* For each project hypothesis, describe the conclusion and how you validated
+* Bloack for each project hypothesis, describe the conclusion and how you validated.
 
-### Page 5: ML Performance Metrics
-* Label counts for Train, Validation and Test Sets
+### Page 5: ML: Evaluation
+* Label Frequencies for Train, Validation and Test Sets
 * Model History - Accuracy and Losses
-* Model evaluation
-
+* Model evaluation result

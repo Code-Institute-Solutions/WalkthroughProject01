@@ -6,13 +6,37 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 from matplotlib.image import imread
 
+import itertools
+import random
 
 def page_cells_visualizer_body():
     st.write("### Cells Visualizer")
     st.info(
         f"* The client is interested to have a study to visually differentiate "
         f"an parasitized and uninfected cell.")
+    
+    version = 'v1'
+    if st.checkbox("Difference between average and variability image"):
+      
+      avg_parasitized = plt.imread(f"outputs/{version}/avg_var_Parasitized.png")
+      avg_uninfected = plt.imread(f"outputs/{version}/avg_var_Uninfected.png")
 
+      st.warning(
+        f"* We notice the average and variability images didn't show "
+        f"patterns where we could intuitively differentiate one to another." 
+        f"However, a small difference in color pigment of the average images is seen for both labels")
+
+      st.image(avg_parasitized, caption='Parasitized Cell - Avegare and Variability')
+      st.image(avg_uninfected, caption='Uninfected Cell - Average and Variability')
+      st.write("---")
+
+    if st.checkbox("Differences between average parasitized and average uninfected cells"):
+          diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
+
+          st.warning(
+            f"* We notice this study didn't show "
+            f"patterns where we could intuitively differentiate one to another.")
+          st.image(diff_between_avgs, caption='Difference between average images')
 
     if st.checkbox("Image Montage"): 
       st.write("* To refresh the montage, click on 'Create Montage' button")
@@ -24,33 +48,9 @@ def page_cells_visualizer_body():
                       label_to_display=label_to_display,
                       nrows=8, ncols=3, figsize=(10,25))
       st.write("---")
-    
-    version = 'v1'
-    if st.checkbox("Average Image and Variability"):
-      
-      avg_parasitized = plt.imread(f"outputs/{version}/avg_Parasitized.png")
-      avg_uninfected = plt.imread(f"outputs/{version}/avg_Uninfected.png")
-
-      st.warning(
-        f"* We notice the average image and variability study didn't show "
-        f"patterns where we could intuitively differentiate one to another.")
-
-      st.image(avg_parasitized, caption='Parasitized Cell - Average and Variability')
-      st.image(avg_uninfected, caption='Uninfected Cell - Average and Variability')
-      st.write("---")
-
-    if st.checkbox("Differences between Average Parasitized and Average Uninfected Cells"):
-          diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
-
-          st.warning(
-            f"* We notice this study didn't show "
-            f"patterns where we could intuitively differentiate one to another.")
-          st.image(diff_between_avgs, caption='Difference between averages')
 
 
 
-import itertools
-import random
 def image_montage(dir_path, label_to_display, nrows, ncols, figsize=(15,10)):
   sns.set_style("white")
   labels = os.listdir(dir_path)
