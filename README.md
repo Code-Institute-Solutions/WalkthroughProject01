@@ -15,9 +15,9 @@ As a Data Analyst from Code Institute Consulting, you are requested by the Healt
 
 ## Rationale to map the business requirements to the Data Visualizations and ML tasks
 * **Business Requirement 1**: Data Visualization 
-	* We will display a image montage for either parasitized or uninfected cells.
 	* We will display the "average" and "standard deviation" images for parasitized and uninfected cells.
-	* We will display the difference between an average parasitized cell and an average uninfected cell
+	* We will display the difference between an average parasitized cell and an average uninfected cell.
+	* We will display a image montage for either parasitized or uninfected cells.
 
 * **Business Requirement 2**:  Classification
 	* We want to predict if a given cell is infected or not with malaria. 
