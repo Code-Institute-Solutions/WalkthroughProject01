@@ -5,7 +5,7 @@ The dataset contains +27 thousand images taken from a blood smear workflow (wher
 ## Business Requirements
 As a Data Analyst from Code Institute Consulting, you are requested by the Health Care division to provide actionable insights and data-driven recommendations to a Global Hospital Institution. The client is currently facing challenges in disease detection, especially with malaria.
 * 1 - The client is interested in having a study to differentiate a parasitized and uninfected cell visually.
-* 2 - The client is interested in telling whether or not a given cell is parasitized with malaria or not.
+* 2 - The client is interested to tell whether a given cell contains malaria parasite or not.
 
 
 ## Hypothesis and how to validate?
@@ -51,7 +51,8 @@ As a Data Analyst from Code Institute Consulting, you are requested by the Healt
 ### Page 4: Project Hypothesis and Validation
 * For each project hypothesis, describe the conclusion and how you validated
 
-### Page 5: ML: Evaluation
-* Label Frequencies for Train, Validation and Test Sets
+### Page 5: ML Performance Metrics
+* Label counts for Train, Validation and Test Sets
 * Model History - Accuracy and Losses
 * Model evaluation
+
