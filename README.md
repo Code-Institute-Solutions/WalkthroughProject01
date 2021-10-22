@@ -44,7 +44,11 @@ As a Data Analyst from Code Institute Consulting, you are requested by the Healt
 ### Page 1: Quick Project Summary
 * Quick project summary
 	* General Information
+		* Malaria is a parasitic infection transmitted by the bite of infected female Anopheles mosquitoes.
+		* A blood smear sample is collected, mixed with a reagent and examined in the microscope. Visual criteria are used to detect malaria parasites. 
+		* According to WHO, in 2019, there were an estimated 229 million cases of malaria worldwide and an estimated 409 thousand deaths due to this diseease. Children <5 years are the most vulnerable group, accounting for 67% (274 thousand) of all malaria deaths worldwide in 2019.
 	* Project Dataset
+		* The available dataset contains 5643 out of +27 thousand images taken from blood smear workflow (when a drop of blood it taken on a glass slide) of cells that are parasitized or uninfected with malaria.
 	* Link to addition ainformation
 	* Business requirements
 		*  The client is interested in having a study to differentiate a parasitized and uninfected cell visually.
