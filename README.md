@@ -70,7 +70,7 @@ As a Data Analyst from Code Institute Consulting, you are requested by the Healt
 ### Page 4: Project Hypothesis and Validation
 * Bloack for each project hypothesis, describe the conclusion and how you validated.
 
-### Page 5: ML: Evaluation
+### Page 5: ML Prediction Metrics
 * Label Frequencies for Train, Validation and Test Sets
 * Model History - Accuracy and Losses
 * Model evaluation result
