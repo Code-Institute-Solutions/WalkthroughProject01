@@ -18,7 +18,7 @@ def page_malaria_detector_body():
 
     st.write(
         f"* You can download a set of parasitized and uninfected cells for live prediction. "
-        f"You can download the images from [here](https://www.kaggle.com/gyanshashwat1611/malaria-cell-classification)"
+        f"You can download the images from [here](https://www.kaggle.com/gyanshashwat1611/cell-images-test)"
         )
 
     st.write("---")
