@@ -1,5 +1,5 @@
 ## Dataset Content
-The dataset contains 5643 +27 thousand images taken from a blood smear workflow (where a drop of blood is placed on a glass slide). The cells are parasitized or uninfected with malaria.
+The dataset contains 5643 images taken from a blood smear workflow (where a drop of blood is placed on a glass slide). The cells are parasitized or uninfected with malaria.
 
 
 ## Business Requirements
