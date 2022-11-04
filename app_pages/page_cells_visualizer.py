@@ -13,7 +13,7 @@ def page_cells_visualizer_body():
     st.write("### Cells Visualizer")
     st.info(
         f"* The client is interested in having a study that visually "
-        f"differentiates a parasitized from an uninfected cell.")
+        f"differentiates a parasitised from an uninfected cell.")
     
     version = 'v1'
     if st.checkbox("Difference between average and variability image"):
@@ -26,11 +26,11 @@ def page_cells_visualizer_body():
         f"patterns where we could intuitively differentiate one from another. " 
         f"However, a small difference in the colour pigment of the average images is seen for both labels.")
 
-      st.image(avg_parasitized, caption='Parasitized Cell - Average and Variability')
+      st.image(avg_parasitized, caption='Parasitised Cell - Average and Variability')
       st.image(avg_uninfected, caption='Uninfected Cell - Average and Variability')
       st.write("---")
 
-    if st.checkbox("Differences between average parasitized and average uninfected cells"):
+    if st.checkbox("Differences between average parasitised and average uninfected cells"):
           diff_between_avgs = plt.imread(f"outputs/{version}/avg_diff.png")
 
           st.warning(

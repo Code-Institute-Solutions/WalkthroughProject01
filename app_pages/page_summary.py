@@ -20,11 +20,11 @@ def page_summary_body():
         f"**Project Dataset**\n"
         f"* The available dataset contains 5643 out of +27 thousand images taken from "
         f"blood smear workflow (when a drop of blood is taken on a glass slide) of "
-        f"malaria-parasitized and uninfected cells.")
+        f"malaria-parasitised and uninfected cells.")
 
     st.write(
         f"* For additional information, please visit and **read** the "
-        f"[Project README file](https://github.com/GyanShashwat1611/WalkthroughProject01/blob/main/README.md).")
+        f"[Project README file](https://github.com/Code-Institute-Solutions/WalkthroughProject01/blob/main/README.md).")
     
 
     st.success(
