@@ -12,8 +12,8 @@ import random
 def page_cells_visualizer_body():
     st.write("### Cells Visualizer")
     st.info(
-        f"* The client is interested to have a study to visually differentiate "
-        f"an parasitized and uninfected cell.")
+        f"* The client is interested in having a study that visually "
+        f"differentiates a parasitized from an uninfected cell.")
     
     version = 'v1'
     if st.checkbox("Difference between average and variability image"):
@@ -22,11 +22,11 @@ def page_cells_visualizer_body():
       avg_uninfected = plt.imread(f"outputs/{version}/avg_var_Uninfected.png")
 
       st.warning(
-        f"* We notice the average and variability images didn't show "
-        f"patterns where we could intuitively differentiate one to another." 
-        f"However, a small difference in color pigment of the average images is seen for both labels")
+        f"* We notice the average and variability images did not show "
+        f"patterns where we could intuitively differentiate one from another. " 
+        f"However, a small difference in the colour pigment of the average images is seen for both labels.")
 
-      st.image(avg_parasitized, caption='Parasitized Cell - Avegare and Variability')
+      st.image(avg_parasitized, caption='Parasitized Cell - Average and Variability')
       st.image(avg_uninfected, caption='Uninfected Cell - Average and Variability')
       st.write("---")
 
@@ -35,11 +35,11 @@ def page_cells_visualizer_body():
 
           st.warning(
             f"* We notice this study didn't show "
-            f"patterns where we could intuitively differentiate one to another.")
+            f"patterns where we could intuitively differentiate one from another.")
           st.image(diff_between_avgs, caption='Difference between average images')
 
     if st.checkbox("Image Montage"): 
-      st.write("* To refresh the montage, click on 'Create Montage' button")
+      st.write("* To refresh the montage, click on the 'Create Montage' button")
       my_data_dir = 'inputs/malaria_dataset/cell_images'
       labels = os.listdir(my_data_dir+ '/validation')
       label_to_display = st.selectbox(label="Select label", options=labels, index=0)

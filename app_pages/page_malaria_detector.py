@@ -12,13 +12,13 @@ from src.machine_learning.predictive_analysis import (
 
 def page_malaria_detector_body():
     st.info(
-        f"* The client is interested to tell whether a given cell contains malaria parasite "
+        f"* The client is interested in telling whether a given cell contains a malaria parasite "
         f"or not."
         )
 
     st.write(
         f"* You can download a set of parasitized and uninfected cells for live prediction. "
-        f"You can download the images from [here](https://www.kaggle.com/codeinstitute/cell-images-test)"
+        f"You can download the images from [here](https://www.kaggle.com/codeinstitute/cell-images-test)."
         )
 
     st.write("---")
