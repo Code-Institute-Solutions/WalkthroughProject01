@@ -1,3 +1,5 @@
+image:
+  file: .gitpod.dockerfile
 tasks:
   - init: pip install -r requirements.txt
 
@@ -5,6 +7,13 @@ vscode:
   extensions:
     - ms-python.python
     - ms-toolsai.jupyter
+    - ms-toolsai.jupyter
+    - formulahendry.auto-close-tag
+    - eventyret.bootstrap-4-cdn-snippet
+    - hookyqr.beautify
+    - matt-rudge.auto-open-preview-panel
+    - ms-toolsai.jupyter-keymap
+    - ms-toolsai.jupyter-renderers
 
 
 

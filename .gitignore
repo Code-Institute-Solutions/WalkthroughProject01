@@ -2,4 +2,5 @@ inputs/malaria_dataset/cell_images/test
 inputs/malaria_dataset/cell_images/train
 kaggle.json
 *.ipynb
+__pycache__/
 
