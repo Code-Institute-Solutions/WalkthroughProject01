@@ -31,15 +31,9 @@ ENV PATH=$PATH:"/home/codeany/.local/bin"
 
 RUN echo 'alias python=python3' >> ~/.bashrc && \
     echo 'export PIP_USER=yes' >> ~/.bashrc && \
-    echo 'alias pip=pip3' >> ~/.bashrc
-
-COPY ./build-assets/heroku_config.sh /home/$USERNAME/.theia/heroku_config.sh
-RUN echo 'alias heroku_config=". $HOME/.theia/heroku_config.sh"' >> ~/.bashrc
-
-COPY ./build-assets/make_url.py /home/$USERNAME/.theia/make_url.py
-RUN echo 'alias make_url="python3 $HOME/.theia/make_url.py "' >> ~/.bashrc
-
-USER root
-RUN chown -R $USERNAME:$USERNAME /home/$USERNAME/.theia
+    echo 'alias pip=pip3' >> ~/.bashrc && \
+    echo 'export PYENV_ROOT="/home/codeany/.pyenv"' >> ~/.bashrc && \
+    echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/shims:$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc && \
+    echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 
 CMD ["tail", "-f", "/dev/null"]

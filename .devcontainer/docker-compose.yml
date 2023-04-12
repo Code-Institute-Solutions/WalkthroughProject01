@@ -4,25 +4,4 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    volumes:
-      - "/tmp/postgres/socket:/var/run/postgresql"
- 
-  psql:
-    image: postgres:11.9
-    environment:
-      - POSTGRES_PASSWORD=pass1234
-      - POSTGRES_USER=codeany
-      - POSTGRES_DB=mydb
-    network_mode: service:app
-    volumes:
-      - "/tmp/postgres/socket:/var/run/postgresql"
 
-  pgadmin:
-    image: dpage/pgadmin4:4.23
-    ports:
-      - 15400:80
-    environment:
-      - PGADMIN_DEFAULT_EMAIL=admin
-      - PGADMIN_DEFAULT_PASSWORD=pass1234
-    depends_on:
-      - psql
