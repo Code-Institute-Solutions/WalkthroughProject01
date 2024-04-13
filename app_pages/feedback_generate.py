@@ -1,15 +1,14 @@
 import matplotlib.pyplot as plt
-import random
-
 import streamlit as st
-from openai import OpenAI
+import random
 import requests
+from openai import OpenAI
+from env import OPENAI_API_KEY 
 
-# Define the OpenAI API key
-api_key = "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"
+
 headers = {
     "Content-Type": "application/json",
-    "Authorization": f"Bearer {api_key}"
+    "Authorization": f"Bearer {OPENAI_API_KEY}"
 }
 
 def feedback_generate():
