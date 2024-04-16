@@ -14,9 +14,9 @@
 
 1. Open the jupyter_notebooks directory in the explorer sidebar, and click on the notebook you want to open.
 
-1. Click the button Not Trusted and choose Trust.
+1. Click the kernel button and choose Python Environments.
 
-Note that the kernel says Python 3. It inherits from the workspace, so it will be Python-3.8.18 as installed by our template. To confirm this, you can use `! python --version` in a notebook code cell.
+1. Choose the kernel that says Python 3.8.18 as it inherits from the workspace, so it will be Python-3.8.18 as installed by our template. To confirm this, you can use `! python --version` in a notebook code cell.
 
 Your workspace is now ready to use. When you want to return to this project, you can find it in your Cloud IDE Dashboard</a>. You should only create one workspace per project.
 
