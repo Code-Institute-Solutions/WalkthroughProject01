@@ -12,15 +12,7 @@
 
 1. Wait for the workspace to open. This can take a few minutes.
 
-1. Open a new terminal and `pip3 install -r requirements.txt`
-
-1. In the terminal, type `pip3 install jupyter`
-
-1. In the terminal, type `jupyter notebook --NotebookApp.token='' --NotebookApp.password=''` to start the jupyter server.
-
-1. Open port 8888 preview or browser
-
-1. Open the jupyter_notebooks directory in the jupyter webpage that has opened, and click on the notebook you want to open.
+1. Open the jupyter_notebooks directory in the explorer sidebar, and click on the notebook you want to open.
 
 1. Click the button Not Trusted and choose Trust.
 
