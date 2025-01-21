@@ -1,14 +1,10 @@
 ## How to use this repo
 
-1. Fork this repo and copy the https URL of your forked Walkthrough01 repo
+1. Fork this repo  
 
-1. Log into the cloud IDE with your GitHub account.
+1. In your forked Walkthrough01 repo click on the green Code button. 
 
-1. On your Dashboard, click on the New Workspace button
-
-1. Paste in the URL you copied from GitHub earlier
-
-1. Click Create
+1. Then, from the Codespaces tab, click Create codespace on main.
 
 1. Wait for the workspace to open. This can take a few minutes.
 
@@ -16,7 +12,7 @@
 
 1. Click the kernel button and choose Python Environments.
 
-1. Choose the kernel that says Python 3.8.18 as it inherits from the workspace, so it will be Python-3.8.18 as installed by our template. To confirm this, you can use `! python --version` in a notebook code cell.
+1. Choose the kernel that says Python 3.12.1 as it inherits from the workspace, so it will be Python-3.12.1 as installed by Codespaces. To confirm this, you can use `! python --version` in a notebook code cell.
 
 Your workspace is now ready to use. When you want to return to this project, you can find it in your Cloud IDE Dashboard</a>. You should only create one workspace per project.
 
